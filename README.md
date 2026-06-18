@@ -6,5 +6,5 @@
 2. `python windows.py`
 
 ## Как использовать API
-- **Эндпоинт:** https://github.com{username}
+- **Эндпоинт:** https://api.github.com/users/{username}
 * **Метод:** `GET`
