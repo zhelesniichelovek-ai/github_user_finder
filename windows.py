@@ -16,6 +16,7 @@ if os.path.exists(HISTORY_FILE):
         history = []
 else:
     history = []
+
 try:
     response = requests.get(API_URL, timeout=5)
     if response.status_code == 200:
@@ -55,7 +56,7 @@ def convert_currency():
         with open(HISTORY_FILE, "w", encoding="utf-8") as f:
             json.dump(history, f, ensure_ascii=False, indent=4)
     except Exception as e:
-        messagebox.showerror("Ошибка", f"Не удалось сохранить история: {e}")
+        messagebox.showerror("Ошибка", f"Не удалось сохранить историю: {e}")
     refresh_history_table()
 
 
@@ -127,3 +128,4 @@ scrollbar.pack(side="right", fill="y")
 tree.configure(yscrollcommand=scrollbar.set)
 refresh_history_table()
 root.mainloop()
+
